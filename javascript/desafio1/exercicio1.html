@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercicio 1</title>
+  </head>
+  <body>
+    <script>
+      var endereco = {
+        rua: "Rua dos pinheiros",
+        numero: 1293,
+        bairro: "Centro",
+        cidade: "São Paulo",
+        uf: "SP"
+      };
+
+      function frase(infos) {
+        console.log(
+          "O usuário mora em " +
+            infos.cidade +
+            " / " +
+            infos.uf +
+            ", no bairro " +
+            infos.bairro +
+            ', na rua "' +
+            infos.rua +
+            '" com nº ' +
+            infos.numero +
+            "."
+        );
+      }
+
+      frase(endereco);
+    </script>
+  </body>
+</html>
