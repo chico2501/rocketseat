@@ -101,3 +101,52 @@ export const IssuesList = styled.ul`
     }
   }
 `;
+
+export const StatusList = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+
+  button {
+    border: 0;
+    background: #999;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    &:hover {
+      background: #7159c1;
+    }
+
+    &:nth-child(${props => props.ativo + 1}) {
+      background: #7159c1;
+      color: white;
+    }
+  }
+`;
+
+export const PageActions = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #7159c1;
+
+  button {
+    border: 0;
+    background: #999;
+    padding: 10px 20px;
+    margin: 0 15px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    &:hover {
+      background: #7159c1;
+    }
+  }
+`;
