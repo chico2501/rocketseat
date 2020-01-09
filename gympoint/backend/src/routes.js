@@ -1,0 +1,46 @@
+import { Router } from 'express';
+
+import SessionController from './app/controllers/SessionController';
+import StudentController from './app/controllers/StudentController';
+import PlanController from './app/controllers/PlanController';
+
+import EnrollmentController from './app/controllers/EnrollmentController';
+
+import StudentLoginController from './app/controllers/StudentLoginController';
+
+import HelpController from './app/controllers/HelpController';
+
+import authMiddleware from './app/middlewares/auth';
+
+/*
+get = listagem
+post = cadastro
+put = editar
+delete = excluir
+*/
+
+const routes = new Router();
+
+routes.get('/students/:id', StudentLoginController.index);
+routes.post('/students/:id/help-orders', HelpController.store);
+
+routes.post('/sessions', SessionController.store);
+
+routes.use(authMiddleware);
+/*
+routes.post('/students', StudentController.store);
+routes.get('/students', StudentController.index);
+routes.put('/students/:id', StudentController.update);
+routes.delete('/students/:id', StudentController.delete);
+*/
+routes.post('/plans', PlanController.store);
+routes.get('/plans', PlanController.index);
+routes.put('/plans/:id', PlanController.update);
+routes.delete('/plans/:id', PlanController.delete);
+
+routes.post('/enrollments', EnrollmentController.store);
+routes.get('/enrollments', EnrollmentController.index);
+routes.put('/enrollments/:id', EnrollmentController.update);
+routes.delete('/enrollments/:id', EnrollmentController.delete);
+
+export default routes;
